@@ -14,11 +14,10 @@ let grocery1;
 let grocery2;
 let grocery3;
 
-function totalAmount(){
-    grocery1 = parseFloat(document.getElementById("grocery1").value);
-    grocery2 = parseFloat(document.getElementById("grocery2").value);
-    grocery3 = parseFloat(document.getElementById("grocery3").value);
 
-    let total = grocery1 + grocery2 + grocery3;
-    document.getElementById("totalResults").innerText = `The total amount is: ${total}`
+
+function totalAmount() {
+    const total = Array.from({length: 3}, (_, i) => i + 1)
+                      .reduce((sum, i) => sum + (parseFloat(document.getElementById(`grocery${i}`).value) || 0), 0);
+    document.getElementById("totalResults").innerText = `The total amount is: ${total}`;
 }
