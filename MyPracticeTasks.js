@@ -45,3 +45,30 @@ const car_01 = new Car ('Ferrari', 'Enzo', '2024');
  players[0].name = 'Tebogo';
 
  console.log (players)
+
+ //TRY-CATCH ERROR HANDLING
+const employee = {name: 'Tshepiso', surname: 'molokwane'}
+
+try{
+    const developerAge = employee.age;
+        if(developerAge === undefined){
+            throw new Error('The age value cannot be found on the object');
+            console.log (`The developer's age is: + ${developerAge}` );
+        }
+}
+catch(error){
+    console.error('Error:', error.message)
+}
+
+const arrayNames = ['Hope', 'Noma', 'Tshepiso',]
+try{
+    const selectedName = arrayNames[6];
+    if(selectedName === undefined){
+        throw new Error ('The value cannot be found');
+        console.log ('array names:', selectedName);
+    }
+    
+}
+catch(error) {
+    console.error(error.message)
+}
