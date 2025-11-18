@@ -39,8 +39,18 @@ function clearCompletedTasks() {
          displayTasks();
 }
 
+function clearAll(){
+    if(confirm('Are you sure you want to delete all tasks?')){
+        tasks = [];
+        displayTasks();
+        window.alert('Tasks were successfully deleted')
+
+    }
+}
+
 
 addTaskBtn.addEventListener('click', addTask);
 clearCompletedBtn.addEventListener('click', clearCompletedTasks);
+clearAllBtn.addEventListener('click', clearAll);
 
 displayTasks();
